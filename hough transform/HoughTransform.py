@@ -75,7 +75,7 @@ def drawLines(lines,edge,color = (255,0,0),err = 3):
 if __name__=='__main__':
     pic_path = './HoughImg/'
     pics = os.listdir(pic_path)
-    k = 0
+
     for i in pics:
         if i[-5:] == '.jpeg' or i[-4:] == '.jpg':
             img = plt.imread(pic_path+i)
@@ -93,7 +93,7 @@ if __name__=='__main__':
 
             lines = lines_detector_hough(edge)
             final_img = drawLines(lines,blurred)
-            k += 1
+            
 
             plt.imshow(final_img,cmap='gray')
             plt.axis('off')
