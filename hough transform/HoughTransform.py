@@ -23,7 +23,7 @@ def lines_detector_hough(edge,ThetaDim = None,DistStep = None,threshold = None,h
     DistDim = int(np.ceil(MaxDist/DistStep))
 
     if halfDistWindowSize == None:
-        halfDistWindowSize = DistDim/50
+        halfDistWindowSize = int(DistDim/50)
     accumulator = np.zeros((ThetaDim,DistDim)) # theta的范围是[0,pi). 在这里将[0,pi)进行了线性映射.类似的,也对Dist轴进行了线性映射
 
     sinTheta = [np.sin(t*np.pi/ThetaDim) for t in range(ThetaDim)]
